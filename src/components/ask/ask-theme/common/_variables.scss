@@ -1,0 +1,49 @@
+/* ask 组件公共变量 */
+
+/* 基础值 */
+$ask--primary-color: #00c853;
+$ask--primary-font-size: .14rem;
+$ask--primary-font-color: #474a4f;
+$ask--default-color: #353535;
+$ask--success-color: #00c853;
+$ask--info-color: #448aff;
+$ask--accent-color: #ff9800;
+$ask--warn-color: #e91e63;
+$ask--disabled-color: #9e9e9e;
+$ask--transition-timing: cubic-bezier(.35, 0, .25, 1);
+$ask--transition-duration: 300ms;
+
+/* button */
+$ask--button-font-size: $ask--primary-font-size;
+$ask--button-font-color: $ask--primary-font-color;
+$ask--button-ver-padding: .12rem;
+$ask--button-hor-padding: .16rem;
+$ask--button-border-radius: .02rem;
+
+/* input */
+$ask--input-font-size: $ask--primary-font-size;
+$ask--input-font-color: $ask--primary-font-color;
+$ask--input-font-scale: .75;
+$ask--input-padding: .12rem;
+$ask--input-margin: .16rem;
+$ask--input-wrapper-bottom: 20px;
+
+/* radio */
+$ask--radio-primary-color: $ask--info-color;
+$ask--radio-border-color: #474a4f;
+$ask--radio-font-size: $ask--primary-font-size;
+$ask--radio-font-color: $ask--primary-font-color;
+$ask--radio-height: .2rem;
+
+/* checkbox */
+$ask--checkbox-primary-color: $ask--info-color;
+$ask--checkbox-border-color: #474a4f;
+$ask--checkbox-font-size: $ask--primary-font-size;
+$ask--checkbox-font-color: $ask--primary-font-color;
+$ask--checkbox-height: .24rem;
+
+/* popper */
+$ask--popper-min-width: 56px;
+$ask--popper-arrow-color: #000;
+$ask--popper-arrow-width: 8px;
+$ask--popper-arrow-filter: red;

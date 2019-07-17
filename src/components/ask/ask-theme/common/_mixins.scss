@@ -1,0 +1,154 @@
+
+@mixin mediaQuery() {
+    & {
+        width: 100%;
+    }
+    @media (min-width: 768px) {
+        & {
+            width: 50%;
+        }
+    }
+    @media (min-width: 992px) {
+        & {
+            width: 33.33333333%;
+        }
+    }
+    @media (min-width: 1200px) {
+        & {
+            width: 25%;
+        }
+    }
+}
+
+/* 字体溢出...处理 */
+
+@mixin textEllipsis($line: 1) {
+    @if $line==1 {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+    }
+    @else {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        -webkit-line-clamp: $line;
+        -webkit-box-orient: vertical;
+    }
+}
+
+
+/* 设置input的placeholder颜色 */
+
+@mixin inputPlaceholder($color: #666) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+}
+
+
+/* flex布局 */
+
+@mixin flexLayout($type: flex, $alignH:'center', $alignV:'center') {
+    display: $type;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    /*垂直方向居中对齐*/
+    @if $alignV=='center' {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    @if $alignV=='stretch' {
+        -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+    }
+    @if $alignV=='top' {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+    @if $alignV=='bottom' {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+    }
+    /*水平方向分散对齐*/
+    @if $alignH=='justify' {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+    @if $alignH=='right' {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    }
+    @if $alignH=='center' {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    @if $alignH=='around' {
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+}
+
+
+/* 
+$bg: #3498db;
+body{
+  background-color: $bg;
+  font-family: 'Passion One', 'arial';
+}
+
+h1{
+  text-align:center;
+  font-size: 6rem;
+  color: #fff;
+  $t: longShadow(darken($bg,30%),$bg,50, 0.5);
+  text-shadow:$t;
+} */
+
+@function longShadow($color_a, $color_b, $stepnum, $opacity: 1, $type: 'bottom-left') {
+    $gradient_steps: null;
+    $shadow_x: 0;
+    $shadow_y: 0;
+    @for $i from 1 through $stepnum {
+        $weight: ( ( $i - 1) / $stepnum) * 100;
+        $colour_mix: mix($color_b, rgba($color_a, $opacity), $weight);
+        $seperator: null;
+        $shadow_x: #{$i};
+        $shadow_y: #{$i};
+        $gradient_steps: append( #{$gradient_steps}, #{$shadow_x}px #{$shadow_y}px $colour_mix $seperator);
+        @if($i !=$stepnum) {
+            $seperator: #{','};
+        }
+        @if($type=='bottom-right') {
+            $shadow_x: #{-$i};
+        }
+        @if($type=='top-right') {
+            $shadow_x: #{-$i};
+            $shadow_y: #{-$i};
+        }
+        @if($type=='top-left') {
+            $shadow_y: #{-$i};
+        }
+    }
+    @return $gradient_steps;
+}

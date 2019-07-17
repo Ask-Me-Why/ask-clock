@@ -1,0 +1,34 @@
+$defaultColor: #353535 #fff rgba(0, 0, 0, .12) rgba(0, 0, 0, .24);
+$successColor: #00e676 #fff rgba(105, 240, 174, .12) rgba(105, 240, 174, .24);
+$infoColor: #1de9b6 #fff rgba(100, 255, 218, .12) rgba(100, 255, 218, .24);
+$dangerColor: #ff4081 #fff rgba(255, 128, 171, .12) rgba(255, 128, 171, .24);
+@mixin askToastTheme($theme) {
+    .ask-toast-box {
+        .ask-toast-message.ask-toast-theme-#{$theme} {
+            @if $theme=='success' {
+                color: nth($successColor, 2);
+                background-color: nth($successColor, 1);
+                -webkit-box-shadow: 0 .01rem .03rem nth($successColor, 3), 0 .01rem .02rem nth($successColor, 4);
+                box-shadow: 0 .01rem .03rem nth($successColor, 3), 0 .01rem .02rem nth($successColor, 4);
+            }
+            @else if $theme=='info' {
+                color: nth($infoColor, 2);
+                background-color: nth($infoColor, 1);
+                -webkit-box-shadow: 0 .01rem .03rem nth($infoColor, 3), 0 .01rem .02rem nth($infoColor, 4);
+                box-shadow: 0 .01rem .03rem nth($infoColor, 3), 0 .01rem .02rem nth($infoColor, 4);
+            }
+            @else if $theme=='danger' {
+                color: nth($dangerColor, 2);
+                background-color: nth($dangerColor, 1);
+                -webkit-box-shadow: 0 .01rem .03rem nth($dangerColor, 3), 0 .01rem .02rem nth($dangerColor, 4);
+                box-shadow: 0 .01rem .03rem nth($dangerColor, 3), 0 .01rem .02rem nth($dangerColor, 4);
+            }
+            @else {
+                color: nth($defaultColor, 2);
+                background-color: nth($defaultColor, 1);
+                -webkit-box-shadow: 0 .01rem .03rem nth($defaultColor, 3), 0 .01rem .02rem nth($defaultColor, 4);
+                box-shadow: 0 .01rem .03rem nth($defaultColor, 3), 0 .01rem .02rem nth($defaultColor, 4);
+            }
+        }
+    }
+}

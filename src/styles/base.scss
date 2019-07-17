@@ -1,0 +1,95 @@
+/*
+* @Author: askMeWhy
+* @Date:   2018-06-28 20:50:38
+* @Last Modified by:   AskMeWhy
+* @Last Modified time: 2019-07-16 18:20:08
+*/
+@charset 'utf-8';
+@import '~@/styles/mixins', '~@/styles/variables';
+@font-face {
+    font-family: 'venolithic';
+    font-weight: normal;
+    font-style: normal;
+    src: url('~@/assets/font/venolithic/venolithic.eot');
+    src: url('~@/assets/font/venolithic/venolithic.eot?#font-spider') format('embedded-opentype'),
+        url('~@/assets/font/venolithic/venolithic.woff2') format('woff2'),
+        url('~@/assets/font/venolithic/venolithic.woff') format('woff'),
+        url('~@/assets/font/venolithic/venolithic.ttf') format('truetype'),
+        url('~@/assets/font/venolithic/venolithic.svg') format('svg');
+}
+@font-face {
+    font-family: 'zixinfangchulianwuyu';
+    font-weight: normal;
+    font-style: normal;
+    src: url('~@/assets/font/zixinfangchulianwuyu/zixinfangchulianwuyu.eot');
+    src: url('~@/assets/font/zixinfangchulianwuyu/zixinfangchulianwuyu.eot?#font-spider') format('embedded-opentype'),
+        url('~@/assets/font/zixinfangchulianwuyu/zixinfangchulianwuyu.woff2') format('woff2'),
+        url('~@/assets/font/zixinfangchulianwuyu/zixinfangchulianwuyu.woff') format('woff'),
+        url('~@/assets/font/zixinfangchulianwuyu/zixinfangchulianwuyu.ttf') format('truetype'),
+        url('~@/assets/font/zixinfangchulianwuyu/zixinfangchulianwuyu.svg') format('svg');
+}
+
+html {
+    font-family: PingFangSC-Regular, Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 5.20834vw;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+body {
+    font-family: inherit;
+    font-size: .18rem;
+    overflow: hidden;
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+
+.wrapper {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    -webkit-overflow-scrolling: touch;
+}
+
+.wrapper::-webkit-scrollbar {
+    display: none;
+}

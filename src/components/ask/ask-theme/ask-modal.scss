@@ -1,0 +1,183 @@
+/*
+* @Author: AskMeWhy
+* @Date:   2019-06-18 10:43:57
+* @Last Modified by:   AskMeWhy
+* @Last Modified time: 2019-06-18 16:43:40
+*/
+$bg: #fff #474443 #999 #333;
+$color: #474443 #7e848c #474a4f;
+
+.ask-modal-box {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    padding: .4rem 0;
+    cursor: pointer;
+
+    .ask-modal-wrapper {
+        position: relative;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 80%;
+        max-width: 800px;
+        max-height: 800px;
+        margin: auto;
+        cursor: auto;
+        pointer-events: auto;
+        border-radius: .04rem;
+        background-color: nth($bg, 1);
+        -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, .3), 0 15px 12px rgba(0, 0, 0, .22);
+        box-shadow: 0 19px 38px rgba(0, 0, 0, .3), 0 15px 12px rgba(0, 0, 0, .22);
+    }
+
+    .ask-modal-header {
+        position: relative;
+        width: 100%;
+        padding: .14rem .14rem;
+        border-radius: .04rem .04rem 0 0/.04rem .04rem 0 0;
+
+        .ask-modal-title {
+            font-size: .18rem;
+            padding-right: .28rem;
+            color: nth($color, 1);
+            @include textEllipsis(1);
+        }
+
+        .ask-close-icon {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            right: 0;
+            cursor: pointer;
+            -webkit-transform: translate(-80%, -50%) rotate(45deg);
+            transform: translate(-80%, -50%) rotate(45deg);
+
+            .icon {
+                position: relative;
+                display: block;
+                width: .24rem;
+                height: .24rem;
+
+                &::after,
+                &::before {
+                    position: absolute;
+                    content: '';
+                    -webkit-transition: background .2s;
+                    transition: background .2s;
+                    border-radius: 100%;
+                    background: nth($bg, 3);
+                }
+
+                &::before {
+                    top: 50%;
+                    left: 0;
+                    width: 100%;
+                    height: .02rem;
+                    margin-top: -.01rem;
+                }
+
+                &::after {
+                    top: 0;
+                    left: 50%;
+                    width: .02rem;
+                    height: 100%;
+                    margin-left: -.01rem;
+                }
+
+                &:hover::after,
+                &:hover::before {
+                    background: nth($bg, 4);
+                }
+            }
+        }
+    }
+
+    .ask-modal-body {
+        font-size: .16rem;
+        padding: 0 .1rem;
+        white-space: normal;
+        word-break: break-all;
+        color: nth($color, 1);
+    }
+
+    .ask-modal-footer {
+        width: 100%;
+        padding: .14rem .14rem;
+        @include flexLayout(flex, right, center);
+    }
+
+    /* 进入过渡的状态 */
+    .ask-modal-fill-enter-active {
+        -webkit-animation: modal-fill-enter .5s both cubic-bezier(.4, 0, 0, 1.5);
+        animation: modal-fill-enter .5s both cubic-bezier(.4, 0, 0, 1.5);
+    }
+
+    @-webkit-keyframes modal-fill-enter {
+        0% {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        100% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes modal-fill-enter {
+        0% {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        100% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* 离开过渡的状态 */
+    .ask-modal-fill-leave-active {
+        -webkit-animation: modal-fill-leave .5s both;
+        animation: modal-fill-leave .5s both;
+    }
+
+    @-webkit-keyframes modal-fill-leave {
+        0% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        100% {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            opacity: 0;
+        }
+    }
+
+    @keyframes modal-fill-leave {
+        0% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        100% {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            opacity: 0;
+        }
+    }
+}

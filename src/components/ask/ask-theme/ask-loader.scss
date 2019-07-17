@@ -1,0 +1,81 @@
+/*
+* @Author: AskMeWhy
+* @Date:   2019-06-18 14:27:44
+* @Last Modified by:   AskMeWhy
+* @Last Modified time: 2019-06-18 15:22:47
+*/
+.ask-loader {
+    display: inline-block;
+    width: .42rem;
+    height: .42rem;
+    padding: .1rem;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation: progress-circular-rotate 1.4s linear infinite;
+        animation: progress-circular-rotate 1.4s linear infinite;
+
+        .v-progress-circular__overlay {
+            -webkit-animation: progress-circular-dash 1.4s ease-in-out infinite;
+            animation: progress-circular-dash 1.4s ease-in-out infinite;
+            stroke-linecap: round;
+            stroke-dasharray: 80, 200;
+            stroke-dashoffset: 0;
+        }
+    }
+
+    @-webkit-keyframes progress-circular-rotate {
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes progress-circular-rotate {
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    @-webkit-keyframes progress-circular-dash {
+        0% {
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+        }
+
+        50% {
+            stroke-dasharray: 100, 200;
+            stroke-dashoffset: -15px;
+        }
+
+        100% {
+            stroke-dasharray: 100, 200;
+            stroke-dashoffset: -125px;
+        }
+    }
+
+    @keyframes progress-circular-dash {
+        0% {
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+        }
+
+        50% {
+            stroke-dasharray: 100, 200;
+            stroke-dashoffset: -15px;
+        }
+
+        100% {
+            stroke-dasharray: 100, 200;
+            stroke-dashoffset: -125px;
+        }
+    }
+}
