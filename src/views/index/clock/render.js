@@ -2,7 +2,7 @@
  * @Author: askMeWhy
  * @Date:   2018-10-19 16:37:08
  * @Last Modified by:   AskMeWhy
- * @Last Modified time: 2019-07-17 14:51:21
+ * @Last Modified time: 2019-07-17 15:17:44
  */
 import * as d3 from 'd3';
 // import equipmentNormalImage from '@/assets/bg1.jpg';
@@ -51,15 +51,16 @@ export const renderLunarDate = function() {
     let { chartGroup, rLinear, clock, maxRadius } = this;
     let _box = chartGroup.append('g').attr('class', 'clock-date-group.lunar-date');
     let _text = _box.append('text')
-        .attr('class', 'clock-text')
+        .attr('class', 'clock-tip')
         .attr('stroke', 'none')
         .text(function(d) {
-            return clock.date.val[0] + '年' + clock.date.val[1] + '月' + clock.date.val[2] + '日';
+            // return clock.date.val[0] + '年' + clock.date.val[1] + '月' + clock.date.val[2] + '日';
+            return 'for big-wave YY 长得丑玩的花';
         });
     let _textRec = _text.node().getBoundingClientRect();
     _text.attr('textLength', rLinear(0.7));
     _box.attr('transform', function(d) {
-        return 'translate(' + -rLinear(0.7) / 2 + ',' + rLinear(_textRec.height / maxRadius) * 2 + ')';
+        return 'translate(' + -rLinear(0.7) / 2 + ',' + rLinear(.18) + ')';
     });
 };
 
@@ -76,7 +77,7 @@ export const renderTime = function() {
     // let _textRec = _text.node().getBoundingClientRect();
     // _text.attr('textLength', rLinear(0.6));
     _box.attr('transform', function(d) {
-        return 'translate(' + -rLinear(0.6) / 2 + ',' + rLinear(0.02) + ')';
+        return 'translate(' + -rLinear(0.6) / 2 + ',' + rLinear(0.05) + ')';
     });
 };
 

@@ -2,7 +2,7 @@
 * @Author: AskMeWhy
 * @Date:   2019-06-14 19:03:05
 * @Last Modified by:   AskMeWhy
-* @Last Modified time: 2019-07-17 14:01:52
+* @Last Modified time: 2019-07-17 15:17:08
 */
 .clock-index-box {
     width: 100%;
@@ -27,6 +27,10 @@
             font-family: 'zixinfangchulianwuyu';
             font-size: 120px;
             fill: rgba(#fff,1);
+        }
+        .clock-tip{
+            font-size: 14px;
+            fill: rgba(#fff,.8);
         }
     }
 }

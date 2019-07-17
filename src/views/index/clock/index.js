@@ -2,7 +2,7 @@
  * @Author: askMeWhy
  * @Date:   2018-10-19 16:37:27
  * @Last Modified by:   AskMeWhy
- * @Last Modified time: 2019-07-17 14:58:51
+ * @Last Modified time: 2019-07-17 15:18:31
  */
 import * as d3 from 'd3';
 import * as moment from 'moment';
@@ -201,7 +201,7 @@ export class AskClock extends ObserverClass {
         this.updateNode();
         this.updateTime();
         this.updateDate();
-        this.updateLunarDate();
+        // this.updateLunarDate();
     }
     init() {
         this.renderSvg();
