@@ -2,7 +2,7 @@
  * @Author: askMeWhy
  * @Date:   2018-10-19 16:37:08
  * @Last Modified by:   AskMeWhy
- * @Last Modified time: 2019-07-17 15:17:44
+ * @Last Modified time: 2020-01-22 14:37:15
  */
 import * as d3 from 'd3';
 // import equipmentNormalImage from '@/assets/bg1.jpg';
@@ -22,7 +22,7 @@ export const renderSvg = function() {
         .select('svg')
         .attr('width', _w)
         .attr('height', _h);
-
+    this.svg.select('g.chart-source-group').remove();
     this.chartGroup = _svg.append('g')
         .attr('class', 'chart-source-group')
         .attr('transform', 'translate(' + _w / 2 + ',' + (_h / 2) + ')');
@@ -74,10 +74,10 @@ export const renderTime = function() {
         .text(function(d) {
             return clock.time.val[0] + ':' + clock.time.val[1] + ':' + clock.time.val[2];
         });
-    // let _textRec = _text.node().getBoundingClientRect();
-    // _text.attr('textLength', rLinear(0.6));
+    let _textRec = _text.node().getBoundingClientRect();
+    _text.attr('textLength', rLinear(0.8));
     _box.attr('transform', function(d) {
-        return 'translate(' + -rLinear(0.6) / 2 + ',' + rLinear(0.05) + ')';
+        return 'translate(' + -rLinear(0.8) / 2 + ',' + rLinear(0.05) + ')';
     });
 };
 

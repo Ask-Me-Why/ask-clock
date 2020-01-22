@@ -2,7 +2,7 @@
  * @Author: askMeWhy
  * @Date:   2018-10-19 16:37:27
  * @Last Modified by:   AskMeWhy
- * @Last Modified time: 2019-07-17 15:18:31
+ * @Last Modified time: 2020-01-22 14:36:15
  */
 import * as d3 from 'd3';
 import * as moment from 'moment';
@@ -190,10 +190,10 @@ export class AskClock extends ObserverClass {
         }
     }
     recovery() {
-        // this.emit('recovery');
-        // this.resizeEvent = new ObserverEvent(window, 'resize', (e) => {
-        //     this.init();
-        // })
+        this.emit('recovery');
+        this.resizeEvent = new ObserverEvent(window, 'resize', (e) => {
+            this.init();
+        })
     }
     update() {
         this.buildDate(false);
